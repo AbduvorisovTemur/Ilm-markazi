@@ -3,144 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilm Markazi</title>
+
+    <title>Ilm Markazi — Zamonaviy ta'lim markazi</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
+
 <body>
 
-<header>
-    <div class="logo">ILM MARKAZI</div>
+<header class="header">
+    <div class="container nav">
 
-    <nav>
-        <a href="#home">Bosh sahifa</a>
-        <a href="#about">Biz haqimizda</a>
-        <a href="#courses">Kurslar</a>
-        <a href="#teachers">Ustozlar</a>
-        <a href="#contact">Bog'lanish</a>
-    </nav>
+        <a href="#" class="logo">
+            <span>ILM</span> MARKAZI
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="#home">Bosh sahifa</a>
+            <a href="#about">Biz haqimizda</a>
+            <a href="#courses">Kurslar</a>
+            <a href="#teachers">Ustozlar</a>
+            <a href="#contact">Bog'lanish</a>
+        </nav>
+
+    </div>
 </header>
 
+
+<main>
+
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <h1>ILM MARKAZI</h1>
 
-    <p>Kelajagingiz shu yerdan boshlanadi!</p>
+    <div class="hero-bg"></div>
 
-    <a href="#courses" class="btn">Kurslarga yozilish</a>
-</section>
+    <div class="container hero-content">
 
-<section class="about" id="about">
+        <div class="hero-text">
 
-<h2>Biz haqimizda</h2>
+            <div class="badge">
+                🚀 Kelajagingiz uchun eng yaxshi tanlov
+            </div>
 
-<p>
-Ilm Markazi zamonaviy o'quv markazi bo'lib,
-o'quvchilarga sifatli ta'lim berishni maqsad qilgan.
-Biz tajribali ustozlar bilan ishlaymiz va zamonaviy
-o'qitish usullaridan foydalanamiz.
-</p>
+            <h1>
+                Kelajagingiz
+                <span>shu yerdan</span>
+                boshlanadi!
+            </h1>
 
-</section>
+            <p>
+                Ilm Markazi — zamonaviy metodika, tajribali ustozlar
+                va sifatli ta'limni birlashtirgan o'quv markazi.
+            </p>
 
-<section class="courses" id="courses">
+            <div class="hero-buttons">
 
-<h2>Bizning kurslarimiz</h2>
+                <a href="#courses" class="btn btn-red">
+                    Kurslarni ko'rish →
+                </a>
 
-<div class="cards">
+                <a href="#contact" class="btn btn-outline">
+                    Bog'lanish
+                </a>
 
-<div class="card">
-<i class="fa-solid fa-language"></i>
-<h3>Ingliz tili</h3>
-</div>
+            </div>
 
-<div class="card">
-<i class="fa-solid fa-language"></i>
-<h3>Rus tili</h3>
-</div>
+            <div class="stats">
 
-<div class="card">
-<i class="fa-solid fa-book-quran"></i>
-<h3>Arab tili</h3>
-</div>
+                <div>
+                    <strong>7+</strong>
+                    <small>Kurslar</small>
+                </div>
 
-<div class="card">
-<i class="fa-solid fa-square-root-variable"></i>
-<h3>Matematika</h3>
-</div>
+                <div>
+                    <strong>100%</strong>
+                    <small>Sifatli ta'lim</small>
+                </div>
 
-<div class="card">
-<i class="fa-solid fa-pencil-ruler"></i>
-<h3>Chizmachilik</h3>
-</div>
+                <div>
+                    <strong>24/7</strong>
+                    <small>Qo'llab-quvvatlash</small>
+                </div>
 
-<div class="card">
-<i class="fa-solid fa-computer"></i>
-<h3>IT kurslari</h3>
-</div>
+            </div>
 
-<div class="card">
-<i class="fa-solid fa-code"></i>
-<h3>Frontend</h3>
-</div>
+        </div>
 
-</div>
+        <div class="hero-card">
 
-</section>
+            <div class="card-glow"></div>
 
-<section class="teachers" id="teachers">
+            <div class="book-icon">
+                🎓
+            </div>
 
-<h2>Bizning ustozlar</h2>
+            <h3>ILM MARKAZI</h3>
 
-<div class="teacher-box">
+            <p>
+                Bilim oling. Rivojlaning.
+                Kelajagingizni yarating.
+            </p>
 
-<div class="teacher">
-<h3>Tajribali ustozlar</h3>
-<p>Har bir fan bo'yicha malakali mutaxassislar.</p>
-</div>
+            <div class="line"></div>
 
-<div class="teacher">
-<h3>Sifatli ta'lim</h3>
-<p>Zamonaviy metodika asosida darslar.</p>
-</div>
+            <span>Ta'lim • Rivojlanish • Natija</span>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
-<section class="contact" id="contact">
 
-<h2>Bog'lanish</h2>
+<!-- ABOUT -->
 
-<p><i class="fa-solid fa-phone"></i> +998 77 449 36 36</p>
+<section class="section about" id="about">
 
-<p>
-<i class="fa-brands fa-instagram"></i>
-<a href="https://instagram.com/ilmmarkaz_sport">
-@ilmmarkaz_sport
-</a>
-</p>
+    <div class="container">
 
-<p>
-<i class="fa-brands fa-instagram"></i>
-<a href="https://instagram.com/ilm_markaz">
-@ilm_markaz
-</a>
-</p>
+        <div class="section-title">
 
-<p>
-<i class="fa-brands fa-telegram"></i>
-<a href="https://t.me/Oqmchit_FastEduction">
-Telegram kanal
-</a>
-</p>
+            <span>Biz haqimizda</span>
+
+            <h2>Bilim bilan kelajakni <b>yaratamiz</b></h2>
+
+            <p>
+                Ilm Markazi zamonaviy o'quv markazi bo'lib,
+                o'quvchilarga sifatli ta'lim berishni maqsad qilgan.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-box">
+
+                <div class="icon">👨‍🏫</div>
+
+                <h3>Tajribali ustozlar</h3>
+
+                <p>
+                    Har bir fan bo'yicha malakali va tajribali
+                    mutaxassislar bilan ishlaymiz.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="icon">📚</div>
+
+                <h3>Zamonaviy metodika</h3>
+
+                <p>
+                    Darslarda zamonaviy va samarali o'qitish
+                    usullaridan foydalanamiz.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="icon">🏆</div>
+
+                <h3>Sifatli ta'lim</h3>
+
+                <p>
+                    Maqsadimiz — har bir o'quvchiga sifatli
+                    bilim va rivojlanish imkoniyatini berish.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<!-- COURSES -->
+
+<section class="section courses" id="courses">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Bizning kurslarimiz</span>
+
+            <h2>O'zingizga mos <b>kursni tanlang</b></h2>
+
+            <p>
+                Bilimingizni oshiring va yangi imkoniyatlar sari qadam qo'ying.
+            </p>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <div class="course-card">
+
+                <div class="course-number">01</div>
+
+                <div class="course-icon">🇬🇧</div>
+
+                <h3>Ingliz tili</h3>
+
+                <p>
+                    Ingliz tilini zamonaviy metodika orqali o'rganing.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-number">02</div>
+
+                <div class="course-icon">🇷🇺</div>
+
+                <h3>Rus tili</h3>
+
+                <p>
+                    Rus tilida erkin muloqot qilishni o'rganing.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-number">03</div>
+
+                <div class="course-icon">🕌</div>
+
+                <h3>Arab tili</h3>
+
+                <p>
+                    Arab tilini bosqichma-bosqich o'rganing.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-number">04</div>
+
+                <div class="course-icon">📐</div>
+
+                <h3>Matematika</h3>
+
+                <p>
+                    Matematik bilimlaringizni yanada rivojlantiring.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-number">05</div>
+
+                <div class="course-icon">✏️</div>
+
+                <h3>Chizmachilik</h3>
+
+                <p>
+                    Chizmachilik asoslari va amaliy ko'nikmalar.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-number">06</div>
+
+                <div class="course-icon">💻</div>
+
+                <h3>IT kurslari</h3>
+
+                <p>
+                    Zamonaviy IT texnologiyalarini o'rganing.
+                </p>
+
+                <a href="#contact">Batafsil →</a>
+
+            </div>
+
+
+       <div class="course-card">
+
+    <div class="course-number">07</div>
+
+    <div class="course-icon">⌨️</div>
+
+    <h3>Frontend</h3>
+
+    <p>
+        Web saytlar yaratishni noldan o'rganing.
+    </p>
+
+    <a href="#contact">Batafsil →</a>
+
+</div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEACHERS -->
+
+<section class="section teachers" id="teachers">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Bizning ustozlar</span>
+
+            <h2>Sizga yordam beradigan <b>mutaxassislar</b></h2>
+
+        </div>
+
+
+        <div class="teacher-grid">
+
+            <div class="teacher-card">
+
+                <div class="teacher-avatar">
+                    👨‍🏫
+                </div>
+
+                <h3>Tajribali ustozlar</h3>
+
+                <p>
+                    Har bir fan bo'yicha malakali mutaxassislar.
+                </p>
+
+            </div>
+
+
+            <div class="teacher-card">
+
+                <div class="teacher-avatar">
+                    📖
+                </div>
+
+                <h3>Sifatli ta'lim</h3>
+
+                <p>
+                    Zamonaviy metodika asosida tashkil etilgan darslar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <span>🚀 Bugunoq boshlang</span>
+
+            <h2>Kelajagingizni birga quramiz!</h2>
+
+            <p>
+                O'zingiz uchun mos kursni tanlang va bilim olishni boshlang.
+            </p>
+
+            <a href="#contact" class="btn white-btn">
+                Kursga yozilish →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Bog'lanish</span>
+
+            <h2>Biz bilan <b>aloqaga chiqing</b></h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <small>Telefon</small>
+                        <a href="tel:+998774493636">
+                            +998 77 449 36 36
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📸</div>
+
+                    <div>
+                        <small>Instagram</small>
+                        <a href="https://instagram.com/ilm_markaz"
+                           target="_blank">
+                            @ilm_markaz
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">✈️</div>
+
+                    <div>
+                        <small>Telegram</small>
+                        <a href="https://t.me/" target="_blank">
+                            Telegram kanal
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" id="contactForm">
+
+            <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Ismingiz"
+    required
+>
+
+<input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="Telefon raqamingiz"
+    required
+>
+
+<select id="course" name="course" required>
+    <option value="">Kursni tanlang</option>
+    <option>Ingliz tili</option>
+    <option>Rus tili</option>
+    <option>Arab tili</option>
+    <option>Matematika</option>
+    <option>Chizmachilik</option>
+    <option>IT kurslari</option>
+    <option>Frontend</option>
+</select>
+
+<textarea
+    id="message"
+    name="message"
+    placeholder="Xabaringiz..."
+></textarea>
+                <button type="submit" class="btn btn-red">
+                    Ariza yuborish →
+                </button>
+
+                <div id="formMessage"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
 
 <footer>
 
-<p>© 2026 ILM MARKAZI | Barcha huquqlar himoyalangan.</p>
+    <div class="container footer">
+
+        <div>
+            <a href="#" class="logo">
+                <span>ILM</span> MARKAZI
+            </a>
+
+            <p>
+                Bilim oling. Rivojlaning. Kelajagingizni yarating.
+            </p>
+        </div>
+
+        <p>
+            © 2026 ILM MARKAZI | Barcha huquqlar himoyalangan.
+        </p>
+
+    </div>
 
 </footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
