@@ -1,6 +1,7 @@
 // ==========================================
 // ILM MARKAZI — FULL JAVASCRIPT
-// UZ / RU / EN TRANSLATION
+// UZ / RU / EN
+// TELEGRAM + NETLIFY FUNCTIONS
 // ==========================================
 
 
@@ -12,7 +13,9 @@ const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.querySelector("nav");
 
 if (menuBtn && navMenu) {
+
     menuBtn.addEventListener("click", () => {
+
         navMenu.classList.toggle("active");
 
         if (navMenu.classList.contains("active")) {
@@ -20,7 +23,9 @@ if (menuBtn && navMenu) {
         } else {
             menuBtn.textContent = "☰";
         }
+
     });
+
 }
 
 
@@ -31,6 +36,7 @@ if (menuBtn && navMenu) {
 const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(link => {
+
     link.addEventListener("click", () => {
 
         if (navMenu) {
@@ -40,12 +46,14 @@ navLinks.forEach(link => {
         if (menuBtn) {
             menuBtn.textContent = "☰";
         }
+
     });
+
 });
 
 
 // ==========================================
-// LANGUAGE BUTTONS
+// LANGUAGE SWITCHER
 // ==========================================
 
 const languageBox = document.createElement("div");
@@ -53,12 +61,20 @@ const languageBox = document.createElement("div");
 languageBox.className = "language-switcher";
 
 languageBox.innerHTML = `
-    <button data-language="uz" class="lang-btn active">UZ</button>
-    <button data-language="ru" class="lang-btn">RU</button>
-    <button data-language="en" class="lang-btn">EN</button>
+    <button type="button" data-language="uz" class="lang-btn active">
+        UZ
+    </button>
+
+    <button type="button" data-language="ru" class="lang-btn">
+        RU
+    </button>
+
+    <button type="button" data-language="en" class="lang-btn">
+        EN
+    </button>
 `;
 
-if (navMenu) {
+if (navMenu && navMenu.parentElement) {
     navMenu.parentElement.appendChild(languageBox);
 }
 
@@ -68,6 +84,10 @@ if (navMenu) {
 // ==========================================
 
 const translations = {
+
+    // ======================================
+    // UZBEK
+    // ======================================
 
     uz: {
 
@@ -81,19 +101,29 @@ const translations = {
         // HERO
         badge: "🚀 Kelajagingiz uchun eng yaxshi tanlov",
 
-        heroTitle: "Kelajagingiz shu yerdan boshlanadi!",
+        heroTitle:
+            "Kelajagingiz shu yerdan boshlanadi!",
 
         heroText:
             "Ilm Markazi — zamonaviy metodika, tajribali ustozlar va sifatli ta'limni birlashtirgan o'quv markazi.",
 
-        coursesButton: "Kurslarni ko'rish →",
-        contactButton: "Bog'lanish",
+        coursesButton:
+            "Kurslarni ko'rish →",
 
-        statCourses: "Kurslar",
-        statQuality: "Sifatli ta'lim",
-        statSupport: "Qo'llab-quvvatlash",
+        contactButton:
+            "Bog'lanish",
 
-        cardTitle: "ILM MARKAZI",
+        statCourses:
+            "Kurslar",
+
+        statQuality:
+            "Sifatli ta'lim",
+
+        statSupport:
+            "Qo'llab-quvvatlash",
+
+        cardTitle:
+            "ILM MARKAZI",
 
         cardText:
             "Bilim oling. Rivojlaning. Kelajagingizni yarating.",
@@ -103,130 +133,166 @@ const translations = {
 
 
         // ABOUT
-        aboutLabel: "Biz haqimizda",
+        aboutLabel:
+            "Biz haqimizda",
 
-        aboutTitle: "Bilim bilan kelajakni yaratamiz",
+        aboutTitle:
+            "Bilim bilan kelajakni yaratamiz",
 
         aboutText:
             "Ilm Markazi zamonaviy o'quv markazi bo'lib, o'quvchilarga sifatli ta'lim berishni maqsad qilgan.",
 
-        experiencedTeachers: "Tajribali ustozlar",
+        experiencedTeachers:
+            "Tajribali ustozlar",
 
         experiencedText:
             "Har bir fan bo'yicha malakali va tajribali mutaxassislar bilan ishlaymiz.",
 
-        modernMethod: "Zamonaviy metodika",
+        modernMethod:
+            "Zamonaviy metodika",
 
         modernText:
             "Darslarda zamonaviy va samarali o'qitish usullaridan foydalanamiz.",
 
-        qualityEducation: "Sifatli ta'lim",
+        qualityEducation:
+            "Sifatli ta'lim",
 
         qualityText:
             "Maqsadimiz — har bir o'quvchiga sifatli bilim va rivojlanish imkoniyatini berish.",
 
 
         // COURSES
-        coursesLabel: "Bizning kurslarimiz",
+        coursesLabel:
+            "Bizning kurslarimiz",
 
-        coursesTitle: "O'zingizga mos kursni tanlang",
+        coursesTitle:
+            "O'zingizga mos kursni tanlang",
 
         coursesText:
             "Bilimingizni oshiring va yangi imkoniyatlar sari qadam qo'ying.",
 
-        english: "Ingliz tili",
+        english:
+            "Ingliz tili",
 
         englishText:
             "Ingliz tilini zamonaviy metodika orqali o'rganing.",
 
-        russian: "Rus tili",
+        russian:
+            "Rus tili",
 
         russianText:
             "Rus tilida erkin muloqot qilishni o'rganing.",
 
-        arabic: "Arab tili",
+        arabic:
+            "Arab tili",
 
         arabicText:
             "Arab tilini bosqichma-bosqich o'rganing.",
 
-        mathematics: "Matematika",
+        mathematics:
+            "Matematika",
 
         mathematicsText:
             "Matematik bilimlaringizni yanada rivojlantiring.",
 
-        drawing: "Chizmachilik",
+        drawing:
+            "Chizmachilik",
 
         drawingText:
             "Chizmachilik asoslari va amaliy ko'nikmalar.",
 
-        it: "IT kurslari",
+        it:
+            "IT kurslari",
 
         itText:
             "Zamonaviy IT texnologiyalarini o'rganing.",
 
-        frontend: "Frontend",
+        frontend:
+            "Frontend",
 
         frontendText:
             "Web saytlar yaratishni noldan o'rganing.",
 
-        more: "Batafsil →",
+        more:
+            "Batafsil →",
 
 
         // TEACHERS
-        teachersLabel: "Bizning ustozlar",
+        teachersLabel:
+            "Bizning ustozlarimiz",
 
-        teachersTitle: "Sizga yordam beradigan mutaxassislar",
+        teachersTitle:
+            "Sizga yordam beradigan mutaxassislar",
 
-        teacherTitle1: "Tajribali ustozlar",
+        teacherTitle1:
+            "Tajribali ustozlar",
 
         teacherText1:
             "Har bir fan bo'yicha malakali mutaxassislar.",
 
-        teacherTitle2: "Sifatli ta'lim",
+        teacherTitle2:
+            "Sifatli ta'lim",
 
         teacherText2:
             "Zamonaviy metodika asosida tashkil etilgan darslar.",
 
 
         // CTA
-        startToday: "🚀 Bugunoq boshlang",
+        startToday:
+            "🚀 Bugunoq boshlang",
 
-        ctaTitle: "Kelajagingizni birga quramiz!",
+        ctaTitle:
+            "Kelajagingizni birga quramiz!",
 
         ctaText:
             "O'zingiz uchun mos kursni tanlang va bilim olishni boshlang.",
 
-        enroll: "Kursga yozilish →",
+        enroll:
+            "Kursga yozilish →",
 
 
         // CONTACT
-        contactLabel: "Bog'lanish",
+        contactLabel:
+            "Bog'lanish",
 
-        contactTitle: "Biz bilan aloqaga chiqing",
+        contactTitle:
+            "Biz bilan aloqaga chiqing",
 
-        phone: "Telefon",
+        phone:
+            "Telefon",
 
-        instagram: "Instagram",
+        instagram:
+            "Instagram",
 
-        telegram: "Telegram",
+        telegram:
+            "Telegram",
 
-        telegramChannel: "Telegram kanal",
+        telegramChannel:
+            "Telegram kanal",
 
-        namePlaceholder: "Ismingiz",
+        namePlaceholder:
+            "Ismingiz",
 
-        phonePlaceholder: "Telefon raqamingiz",
+        phonePlaceholder:
+            "Telefon raqamingiz",
 
-        selectCourse: "Kursni tanlang",
+        selectCourse:
+            "Kursni tanlang",
 
-        messagePlaceholder: "Xabaringiz...",
+        messagePlaceholder:
+            "Xabaringiz...",
 
-        sendApplication: "Ariza yuborish →",
+        sendApplication:
+            "Ariza yuborish →",
 
         formEmpty:
             "Iltimos, barcha kerakli maydonlarni to'ldiring.",
 
         formSuccess:
             "Arizangiz qabul qilindi! Tez orada siz bilan bog'lanamiz.",
+
+        formError:
+            "Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.",
 
 
         // FOOTER
@@ -235,6 +301,7 @@ const translations = {
 
         copyright:
             "© 2026 ILM MARKAZI | Barcha huquqlar himoyalangan."
+
     },
 
 
@@ -244,27 +311,47 @@ const translations = {
 
     ru: {
 
-        home: "Главная",
-        courses: "Курсы",
-        teachers: "Преподаватели",
-        about: "О нас",
-        contact: "Контакты",
+        home:
+            "Главная",
 
-        badge: "🚀 Лучший выбор для вашего будущего",
+        courses:
+            "Курсы",
 
-        heroTitle: "Ваше будущее начинается здесь!",
+        teachers:
+            "Преподаватели",
+
+        about:
+            "О нас",
+
+        contact:
+            "Контакты",
+
+        badge:
+            "🚀 Лучший выбор для вашего будущего",
+
+        heroTitle:
+            "Ваше будущее начинается здесь!",
 
         heroText:
             "Ilm Markazi — образовательный центр, объединяющий современные методики, опытных преподавателей и качественное образование.",
 
-        coursesButton: "Посмотреть курсы →",
-        contactButton: "Связаться",
+        coursesButton:
+            "Посмотреть курсы →",
 
-        statCourses: "Курсов",
-        statQuality: "Качественное обучение",
-        statSupport: "Поддержка 24/7",
+        contactButton:
+            "Связаться",
 
-        cardTitle: "ILM MARKAZI",
+        statCourses:
+            "Курсов",
+
+        statQuality:
+            "Качественное обучение",
+
+        statSupport:
+            "Поддержка",
+
+        cardTitle:
+            "ILM MARKAZI",
 
         cardText:
             "Получайте знания. Развивайтесь. Создавайте своё будущее.",
@@ -273,120 +360,158 @@ const translations = {
             "Образование • Развитие • Результат",
 
 
-        aboutLabel: "О нас",
+        // ABOUT
+        aboutLabel:
+            "О нас",
 
-        aboutTitle: "Создаём будущее с помощью знаний",
+        aboutTitle:
+            "Создаём будущее с помощью знаний",
 
         aboutText:
             "Ilm Markazi — современный образовательный центр, главная цель которого — дать учащимся качественное образование.",
 
-        experiencedTeachers: "Опытные преподаватели",
+        experiencedTeachers:
+            "Опытные преподаватели",
 
         experiencedText:
             "Мы работаем с квалифицированными и опытными специалистами по каждому предмету.",
 
-        modernMethod: "Современная методика",
+        modernMethod:
+            "Современная методика",
 
         modernText:
             "На занятиях используются современные и эффективные методы обучения.",
 
-        qualityEducation: "Качественное образование",
+        qualityEducation:
+            "Качественное образование",
 
         qualityText:
             "Наша цель — дать каждому ученику качественные знания и возможности для развития.",
 
 
-        coursesLabel: "Наши курсы",
+        // COURSES
+        coursesLabel:
+            "Наши курсы",
 
-        coursesTitle: "Выберите подходящий курс",
+        coursesTitle:
+            "Выберите подходящий курс",
 
         coursesText:
             "Расширяйте свои знания и делайте шаг навстречу новым возможностям.",
 
-        english: "Английский язык",
+        english:
+            "Английский язык",
 
         englishText:
             "Изучайте английский язык с помощью современных методик.",
 
-        russian: "Русский язык",
+        russian:
+            "Русский язык",
 
         russianText:
             "Научитесь свободно общаться на русском языке.",
 
-        arabic: "Арабский язык",
+        arabic:
+            "Арабский язык",
 
         arabicText:
             "Изучайте арабский язык шаг за шагом.",
 
-        mathematics: "Математика",
+        mathematics:
+            "Математика",
 
         mathematicsText:
             "Развивайте и улучшайте свои математические знания.",
 
-        drawing: "Черчение",
+        drawing:
+            "Черчение",
 
         drawingText:
             "Основы черчения и практические навыки.",
 
-        it: "IT-курсы",
+        it:
+            "IT-курсы",
 
         itText:
             "Изучайте современные IT-технологии.",
 
-        frontend: "Frontend",
+        frontend:
+            "Frontend",
 
         frontendText:
             "Научитесь создавать веб-сайты с нуля.",
 
-        more: "Подробнее →",
+        more:
+            "Подробнее →",
 
 
-        teachersLabel: "Наши преподаватели",
+        // TEACHERS
+        teachersLabel:
+            "Наши преподаватели",
 
-        teachersTitle: "Специалисты, которые помогут вам",
+        teachersTitle:
+            "Специалисты, которые помогут вам",
 
-        teacherTitle1: "Опытные преподаватели",
+        teacherTitle1:
+            "Опытные преподаватели",
 
         teacherText1:
             "Квалифицированные специалисты по каждому предмету.",
 
-        teacherTitle2: "Качественное обучение",
+        teacherTitle2:
+            "Качественное обучение",
 
         teacherText2:
             "Занятия организованы на основе современных методик.",
 
 
-        startToday: "🚀 Начните уже сегодня",
+        // CTA
+        startToday:
+            "🚀 Начните уже сегодня",
 
-        ctaTitle: "Давайте вместе построим ваше будущее!",
+        ctaTitle:
+            "Давайте вместе построим ваше будущее!",
 
         ctaText:
             "Выберите подходящий курс и начните получать знания.",
 
-        enroll: "Записаться на курс →",
+        enroll:
+            "Записаться на курс →",
 
 
-        contactLabel: "Контакты",
+        // CONTACT
+        contactLabel:
+            "Контакты",
 
-        contactTitle: "Свяжитесь с нами",
+        contactTitle:
+            "Свяжитесь с нами",
 
-        phone: "Телефон",
+        phone:
+            "Телефон",
 
-        instagram: "Instagram",
+        instagram:
+            "Instagram",
 
-        telegram: "Telegram",
+        telegram:
+            "Telegram",
 
-        telegramChannel: "Telegram канал",
+        telegramChannel:
+            "Telegram канал",
 
-        namePlaceholder: "Ваше имя",
+        namePlaceholder:
+            "Ваше имя",
 
-        phonePlaceholder: "Ваш номер телефона",
+        phonePlaceholder:
+            "Ваш номер телефона",
 
-        selectCourse: "Выберите курс",
+        selectCourse:
+            "Выберите курс",
 
-        messagePlaceholder: "Ваше сообщение...",
+        messagePlaceholder:
+            "Ваше сообщение...",
 
-        sendApplication: "Отправить заявку →",
+        sendApplication:
+            "Отправить заявку →",
 
         formEmpty:
             "Пожалуйста, заполните все необходимые поля.",
@@ -394,12 +519,17 @@ const translations = {
         formSuccess:
             "Ваша заявка принята! Мы свяжемся с вами в ближайшее время.",
 
+        formError:
+            "Произошла ошибка. Пожалуйста, попробуйте ещё раз.",
 
+
+        // FOOTER
         footerText:
             "Получайте знания. Развивайтесь. Создавайте своё будущее.",
 
         copyright:
             "© 2026 ILM MARKAZI | Все права защищены."
+
     },
 
 
@@ -409,27 +539,47 @@ const translations = {
 
     en: {
 
-        home: "Home",
-        courses: "Courses",
-        teachers: "Teachers",
-        about: "About Us",
-        contact: "Contact",
+        home:
+            "Home",
 
-        badge: "🚀 The best choice for your future",
+        courses:
+            "Courses",
 
-        heroTitle: "Your future starts here!",
+        teachers:
+            "Teachers",
+
+        about:
+            "About Us",
+
+        contact:
+            "Contact",
+
+        badge:
+            "🚀 The best choice for your future",
+
+        heroTitle:
+            "Your future starts here!",
 
         heroText:
             "Ilm Markazi is an educational center that combines modern teaching methods, experienced teachers and quality education.",
 
-        coursesButton: "View Courses →",
-        contactButton: "Contact Us",
+        coursesButton:
+            "View Courses →",
 
-        statCourses: "Courses",
-        statQuality: "Quality Education",
-        statSupport: "24/7 Support",
+        contactButton:
+            "Contact Us",
 
-        cardTitle: "ILM MARKAZI",
+        statCourses:
+            "Courses",
+
+        statQuality:
+            "Quality Education",
+
+        statSupport:
+            "Support",
+
+        cardTitle:
+            "ILM MARKAZI",
 
         cardText:
             "Learn. Develop. Create your future.",
@@ -438,120 +588,158 @@ const translations = {
             "Education • Development • Results",
 
 
-        aboutLabel: "About Us",
+        // ABOUT
+        aboutLabel:
+            "About Us",
 
-        aboutTitle: "We build the future through knowledge",
+        aboutTitle:
+            "We build the future through knowledge",
 
         aboutText:
             "Ilm Markazi is a modern educational center focused on providing students with quality education.",
 
-        experiencedTeachers: "Experienced Teachers",
+        experiencedTeachers:
+            "Experienced Teachers",
 
         experiencedText:
             "We work with qualified and experienced specialists in every subject.",
 
-        modernMethod: "Modern Methodology",
+        modernMethod:
+            "Modern Methodology",
 
         modernText:
             "Our lessons use modern and effective teaching methods.",
 
-        qualityEducation: "Quality Education",
+        qualityEducation:
+            "Quality Education",
 
         qualityText:
             "Our goal is to provide every student with quality knowledge and opportunities for development.",
 
 
-        coursesLabel: "Our Courses",
+        // COURSES
+        coursesLabel:
+            "Our Courses",
 
-        coursesTitle: "Choose the right course for you",
+        coursesTitle:
+            "Choose the right course for you",
 
         coursesText:
             "Improve your knowledge and take a step towards new opportunities.",
 
-        english: "English",
+        english:
+            "English",
 
         englishText:
             "Learn English using modern teaching methods.",
 
-        russian: "Russian",
+        russian:
+            "Russian",
 
         russianText:
             "Learn to communicate freely in Russian.",
 
-        arabic: "Arabic",
+        arabic:
+            "Arabic",
 
         arabicText:
             "Learn Arabic step by step.",
 
-        mathematics: "Mathematics",
+        mathematics:
+            "Mathematics",
 
         mathematicsText:
             "Improve and develop your mathematical knowledge.",
 
-        drawing: "Technical Drawing",
+        drawing:
+            "Technical Drawing",
 
         drawingText:
             "Learn the basics of technical drawing and practical skills.",
 
-        it: "IT Courses",
+        it:
+            "IT Courses",
 
         itText:
             "Learn modern IT technologies.",
 
-        frontend: "Frontend",
+        frontend:
+            "Frontend",
 
         frontendText:
             "Learn how to create websites from scratch.",
 
-        more: "Learn More →",
+        more:
+            "Learn More →",
 
 
-        teachersLabel: "Our Teachers",
+        // TEACHERS
+        teachersLabel:
+            "Our Teachers",
 
-        teachersTitle: "Specialists who will help you",
+        teachersTitle:
+            "Specialists who will help you",
 
-        teacherTitle1: "Experienced Teachers",
+        teacherTitle1:
+            "Experienced Teachers",
 
         teacherText1:
             "Qualified specialists in every subject.",
 
-        teacherTitle2: "Quality Education",
+        teacherTitle2:
+            "Quality Education",
 
         teacherText2:
             "Lessons are organized using modern teaching methods.",
 
 
-        startToday: "🚀 Start Today",
+        // CTA
+        startToday:
+            "🚀 Start Today",
 
-        ctaTitle: "Let's build your future together!",
+        ctaTitle:
+            "Let's build your future together!",
 
         ctaText:
             "Choose the right course for you and start learning.",
 
-        enroll: "Enroll Now →",
+        enroll:
+            "Enroll Now →",
 
 
-        contactLabel: "Contact",
+        // CONTACT
+        contactLabel:
+            "Contact",
 
-        contactTitle: "Get in touch with us",
+        contactTitle:
+            "Get in touch with us",
 
-        phone: "Phone",
+        phone:
+            "Phone",
 
-        instagram: "Instagram",
+        instagram:
+            "Instagram",
 
-        telegram: "Telegram",
+        telegram:
+            "Telegram",
 
-        telegramChannel: "Telegram Channel",
+        telegramChannel:
+            "Telegram Channel",
 
-        namePlaceholder: "Your name",
+        namePlaceholder:
+            "Your name",
 
-        phonePlaceholder: "Your phone number",
+        phonePlaceholder:
+            "Your phone number",
 
-        selectCourse: "Choose a course",
+        selectCourse:
+            "Choose a course",
 
-        messagePlaceholder: "Your message...",
+        messagePlaceholder:
+            "Your message...",
 
-        sendApplication: "Send Application →",
+        sendApplication:
+            "Send Application →",
 
         formEmpty:
             "Please fill in all required fields.",
@@ -559,19 +747,24 @@ const translations = {
         formSuccess:
             "Your application has been received! We will contact you soon.",
 
+        formError:
+            "Something went wrong. Please try again.",
 
+
+        // FOOTER
         footerText:
             "Learn. Develop. Create your future.",
 
         copyright:
             "© 2026 ILM MARKAZI | All rights reserved."
+
     }
 
 };
 
 
 // ==========================================
-// APPLY TRANSLATION
+// APPLY LANGUAGE
 // ==========================================
 
 function applyLanguage(lang) {
@@ -581,17 +774,27 @@ function applyLanguage(lang) {
     if (!t) return;
 
 
-    // ------------------------------
+    // ======================================
+    // HTML LANGUAGE
+    // ======================================
+
+    document.documentElement.lang = lang;
+
+
+    // ======================================
     // NAVBAR
-    // ------------------------------
+    // ======================================
 
     const navTranslation = {
-        "home": t.home,
-        "courses": t.courses,
-        "teachers": t.teachers,
-        "about": t.about,
-        "contact": t.contact
+
+        home: t.home,
+        courses: t.courses,
+        teachers: t.teachers,
+        about: t.about,
+        contact: t.contact
+
     };
+
 
     document.querySelectorAll("nav a").forEach(link => {
 
@@ -604,247 +807,421 @@ function applyLanguage(lang) {
     });
 
 
-    // ------------------------------
+    // ======================================
     // HERO
-    // ------------------------------
+    // ======================================
 
-    const badge = document.querySelector(".badge");
-    if (badge) badge.textContent = t.badge;
+    const badge =
+        document.querySelector(".badge");
+
+    if (badge) {
+        badge.textContent = t.badge;
+    }
 
 
-    const heroTitle = document.querySelector(".hero h1");
+    const heroTitle =
+        document.querySelector(".hero h1");
+
 
     if (heroTitle) {
-        heroTitle.innerHTML = `
-            ${t.heroTitle.replace(" ", " <span>")}
-        `;
 
-        // Chiroyli ko'rinish uchun
         if (lang === "uz") {
+
             heroTitle.innerHTML =
                 `Kelajagingiz <span>shu yerdan</span> boshlanadi!`;
+
         }
 
         if (lang === "ru") {
+
             heroTitle.innerHTML =
                 `Ваше <span>будущее</span> начинается здесь!`;
+
         }
 
         if (lang === "en") {
+
             heroTitle.innerHTML =
                 `Your <span>future</span> starts here!`;
+
         }
+
     }
 
 
-    const heroText = document.querySelector(".hero-text > p");
-    if (heroText) heroText.textContent = t.heroText;
+    const heroText =
+        document.querySelector(".hero-text > p");
+
+    if (heroText) {
+        heroText.textContent = t.heroText;
+    }
 
 
-    const heroButtons = document.querySelectorAll(".hero-buttons .btn");
+    const heroButtons =
+        document.querySelectorAll(".hero-buttons .btn");
+
 
     if (heroButtons[0]) {
-        heroButtons[0].textContent = t.coursesButton;
+        heroButtons[0].textContent =
+            t.coursesButton;
     }
+
 
     if (heroButtons[1]) {
-        heroButtons[1].textContent = t.contactButton;
+        heroButtons[1].textContent =
+            t.contactButton;
     }
 
 
-    // ------------------------------
+    // ======================================
     // STATS
-    // ------------------------------
+    // ======================================
 
-    const stats = document.querySelectorAll(".stats small");
-
-    if (stats[0]) stats[0].textContent = t.statCourses;
-    if (stats[1]) stats[1].textContent = t.statQuality;
-    if (stats[2]) stats[2].textContent = t.statSupport;
+    const stats =
+        document.querySelectorAll(".stats small");
 
 
-    // ------------------------------
+    if (stats[0]) {
+        stats[0].textContent =
+            t.statCourses;
+    }
+
+    if (stats[1]) {
+        stats[1].textContent =
+            t.statQuality;
+    }
+
+    if (stats[2]) {
+        stats[2].textContent =
+            t.statSupport;
+    }
+
+
+    // ======================================
     // HERO CARD
-    // ------------------------------
+    // ======================================
 
-    const cardTitle = document.querySelector(".hero-card h3");
-    const cardText = document.querySelector(".hero-card p");
-    const cardBottom = document.querySelector(".hero-card span");
+    const cardTitle =
+        document.querySelector(".hero-card h3");
 
-    if (cardTitle) cardTitle.textContent = t.cardTitle;
-    if (cardText) cardText.textContent = t.cardText;
-    if (cardBottom) cardBottom.textContent = t.cardBottom;
+    const cardText =
+        document.querySelector(".hero-card p");
+
+    const cardBottom =
+        document.querySelector(".hero-card span");
 
 
-    // ------------------------------
+    if (cardTitle) {
+        cardTitle.textContent =
+            t.cardTitle;
+    }
+
+    if (cardText) {
+        cardText.textContent =
+            t.cardText;
+    }
+
+    if (cardBottom) {
+        cardBottom.textContent =
+            t.cardBottom;
+    }
+
+
+    // ======================================
     // SECTION TITLES
-    // ------------------------------
+    // ======================================
 
-    const sectionTitles = document.querySelectorAll(".section-title");
+    const sectionTitles =
+        document.querySelectorAll(".section-title");
+
 
     // ABOUT
     if (sectionTitles[0]) {
 
-        const el = sectionTitles[0];
+        const el =
+            sectionTitles[0];
 
-        const label = el.querySelector("span");
-        const title = el.querySelector("h2");
-        const text = el.querySelector("p");
+        const label =
+            el.querySelector("span");
 
-        if (label) label.textContent = t.aboutLabel;
+        const title =
+            el.querySelector("h2");
+
+        const text =
+            el.querySelector("p");
+
+
+        if (label) {
+            label.textContent =
+                t.aboutLabel;
+        }
+
 
         if (title) {
+
             if (lang === "uz") {
+
                 title.innerHTML =
                     `Bilim bilan kelajakni <b>yaratamiz</b>`;
+
             }
 
             if (lang === "ru") {
+
                 title.innerHTML =
                     `Создаём <b>будущее</b> с помощью знаний`;
+
             }
 
             if (lang === "en") {
+
                 title.innerHTML =
                     `We build the <b>future</b> through knowledge`;
+
             }
+
         }
 
-        if (text) text.textContent = t.aboutText;
+
+        if (text) {
+            text.textContent =
+                t.aboutText;
+        }
+
     }
 
 
     // COURSES
     if (sectionTitles[1]) {
 
-        const el = sectionTitles[1];
+        const el =
+            sectionTitles[1];
 
-        const label = el.querySelector("span");
-        const title = el.querySelector("h2");
-        const text = el.querySelector("p");
+        const label =
+            el.querySelector("span");
 
-        if (label) label.textContent = t.coursesLabel;
+        const title =
+            el.querySelector("h2");
+
+        const text =
+            el.querySelector("p");
+
+
+        if (label) {
+            label.textContent =
+                t.coursesLabel;
+        }
+
 
         if (title) {
+
             if (lang === "uz") {
+
                 title.innerHTML =
                     `O'zingizga mos <b>kursni tanlang</b>`;
+
             }
 
             if (lang === "ru") {
+
                 title.innerHTML =
                     `Выберите <b>подходящий курс</b>`;
+
             }
 
             if (lang === "en") {
+
                 title.innerHTML =
                     `Choose the <b>right course</b> for you`;
+
             }
+
         }
 
-        if (text) text.textContent = t.coursesText;
+
+        if (text) {
+            text.textContent =
+                t.coursesText;
+        }
+
     }
 
 
     // TEACHERS
     if (sectionTitles[2]) {
 
-        const el = sectionTitles[2];
+        const el =
+            sectionTitles[2];
 
-        const label = el.querySelector("span");
-        const title = el.querySelector("h2");
+        const label =
+            el.querySelector("span");
 
-        if (label) label.textContent = t.teachersLabel;
+        const title =
+            el.querySelector("h2");
+
+
+        if (label) {
+            label.textContent =
+                t.teachersLabel;
+        }
+
 
         if (title) {
 
             if (lang === "uz") {
+
                 title.innerHTML =
                     `Sizga yordam beradigan <b>mutaxassislar</b>`;
+
             }
 
             if (lang === "ru") {
+
                 title.innerHTML =
                     `Специалисты, которые <b>помогут вам</b>`;
+
             }
 
             if (lang === "en") {
+
                 title.innerHTML =
                     `Specialists who will <b>help you</b>`;
+
             }
+
         }
+
     }
 
 
     // CONTACT
     if (sectionTitles[3]) {
 
-        const el = sectionTitles[3];
+        const el =
+            sectionTitles[3];
 
-        const label = el.querySelector("span");
-        const title = el.querySelector("h2");
+        const label =
+            el.querySelector("span");
 
-        if (label) label.textContent = t.contactLabel;
+        const title =
+            el.querySelector("h2");
+
+
+        if (label) {
+            label.textContent =
+                t.contactLabel;
+        }
+
 
         if (title) {
 
             if (lang === "uz") {
+
                 title.innerHTML =
                     `Biz bilan <b>aloqaga chiqing</b>`;
+
             }
 
             if (lang === "ru") {
+
                 title.innerHTML =
                     `Свяжитесь <b>с нами</b>`;
+
             }
 
             if (lang === "en") {
+
                 title.innerHTML =
                     `Get <b>in touch with us</b>`;
+
             }
+
         }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // ABOUT BOXES
-    // ------------------------------
+    // ======================================
 
-    const aboutBoxes = document.querySelectorAll(".about-box");
+    const aboutBoxes =
+        document.querySelectorAll(".about-box");
+
 
     if (aboutBoxes[0]) {
 
-        const h3 = aboutBoxes[0].querySelector("h3");
-        const p = aboutBoxes[0].querySelector("p");
+        const h3 =
+            aboutBoxes[0].querySelector("h3");
 
-        if (h3) h3.textContent = t.experiencedTeachers;
-        if (p) p.textContent = t.experiencedText;
+        const p =
+            aboutBoxes[0].querySelector("p");
+
+
+        if (h3) {
+            h3.textContent =
+                t.experiencedTeachers;
+        }
+
+        if (p) {
+            p.textContent =
+                t.experiencedText;
+        }
+
     }
+
 
     if (aboutBoxes[1]) {
 
-        const h3 = aboutBoxes[1].querySelector("h3");
-        const p = aboutBoxes[1].querySelector("p");
+        const h3 =
+            aboutBoxes[1].querySelector("h3");
 
-        if (h3) h3.textContent = t.modernMethod;
-        if (p) p.textContent = t.modernText;
+        const p =
+            aboutBoxes[1].querySelector("p");
+
+
+        if (h3) {
+            h3.textContent =
+                t.modernMethod;
+        }
+
+        if (p) {
+            p.textContent =
+                t.modernText;
+        }
+
     }
+
 
     if (aboutBoxes[2]) {
 
-        const h3 = aboutBoxes[2].querySelector("h3");
-        const p = aboutBoxes[2].querySelector("p");
+        const h3 =
+            aboutBoxes[2].querySelector("h3");
 
-        if (h3) h3.textContent = t.qualityEducation;
-        if (p) p.textContent = t.qualityText;
+        const p =
+            aboutBoxes[2].querySelector("p");
+
+
+        if (h3) {
+            h3.textContent =
+                t.qualityEducation;
+        }
+
+        if (p) {
+            p.textContent =
+                t.qualityText;
+        }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // COURSES
-    // ------------------------------
+    // ======================================
 
-    const courseCards = document.querySelectorAll(".course-card");
+    const courseCards =
+        document.querySelectorAll(".course-card");
+
 
     const courseData = [
 
@@ -888,255 +1265,685 @@ function applyLanguage(lang) {
 
     courseCards.forEach((card, index) => {
 
-        if (!courseData[index]) return;
+        if (!courseData[index]) {
+            return;
+        }
 
-        const h3 = card.querySelector("h3");
-        const p = card.querySelector("p");
-        const a = card.querySelector("a");
 
-        if (h3) h3.textContent = courseData[index].title;
+        const h3 =
+            card.querySelector("h3");
 
-        if (p) p.textContent = courseData[index].text;
+        const p =
+            card.querySelector("p");
 
-        if (a) a.textContent = t.more;
+        const a =
+            card.querySelector("a");
+
+
+        if (h3) {
+            h3.textContent =
+                courseData[index].title;
+        }
+
+        if (p) {
+            p.textContent =
+                courseData[index].text;
+        }
+
+        if (a) {
+            a.textContent =
+                t.more;
+        }
 
     });
 
 
-    // ------------------------------
+    // ======================================
     // TEACHERS
-    // ------------------------------
+    // ======================================
 
     const teacherCards =
         document.querySelectorAll(".teacher-card");
 
+
     if (teacherCards[0]) {
 
-        const h3 = teacherCards[0].querySelector("h3");
-        const p = teacherCards[0].querySelector("p");
+        const h3 =
+            teacherCards[0].querySelector("h3");
 
-        if (h3) h3.textContent = t.teacherTitle1;
-        if (p) p.textContent = t.teacherText1;
+        const p =
+            teacherCards[0].querySelector("p");
+
+
+        if (h3) {
+            h3.textContent =
+                t.teacherTitle1;
+        }
+
+        if (p) {
+            p.textContent =
+                t.teacherText1;
+        }
+
     }
+
 
     if (teacherCards[1]) {
 
-        const h3 = teacherCards[1].querySelector("h3");
-        const p = teacherCards[1].querySelector("p");
+        const h3 =
+            teacherCards[1].querySelector("h3");
 
-        if (h3) h3.textContent = t.teacherTitle2;
-        if (p) p.textContent = t.teacherText2;
+        const p =
+            teacherCards[1].querySelector("p");
+
+
+        if (h3) {
+            h3.textContent =
+                t.teacherTitle2;
+        }
+
+        if (p) {
+            p.textContent =
+                t.teacherText2;
+        }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // CTA
-    // ------------------------------
+    // ======================================
 
-    const cta = document.querySelector(".cta");
+    const cta =
+        document.querySelector(".cta");
+
 
     if (cta) {
 
-        const span = cta.querySelector("span");
-        const h2 = cta.querySelector("h2");
-        const p = cta.querySelector("p");
-        const button = cta.querySelector("a");
+        const span =
+            cta.querySelector("span");
 
-        if (span) span.textContent = t.startToday;
+        const h2 =
+            cta.querySelector("h2");
 
-        if (h2) h2.textContent = t.ctaTitle;
+        const p =
+            cta.querySelector("p");
 
-        if (p) p.textContent = t.ctaText;
+        const button =
+            cta.querySelector("a");
 
-        if (button) button.textContent = t.enroll;
+
+        if (span) {
+            span.textContent =
+                t.startToday;
+        }
+
+        if (h2) {
+            h2.textContent =
+                t.ctaTitle;
+        }
+
+        if (p) {
+            p.textContent =
+                t.ctaText;
+        }
+
+        if (button) {
+            button.textContent =
+                t.enroll;
+        }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // CONTACT
-    // ------------------------------
+    // ======================================
 
     const contactItems =
         document.querySelectorAll(".contact-item");
 
+
     if (contactItems[0]) {
 
-        const small = contactItems[0].querySelector("small");
+        const small =
+            contactItems[0].querySelector("small");
 
-        if (small) small.textContent = t.phone;
+        if (small) {
+            small.textContent =
+                t.phone;
+        }
+
     }
+
 
     if (contactItems[1]) {
 
-        const small = contactItems[1].querySelector("small");
+        const small =
+            contactItems[1].querySelector("small");
 
-        if (small) small.textContent = t.instagram;
+        if (small) {
+            small.textContent =
+                t.instagram;
+        }
+
     }
+
 
     if (contactItems[2]) {
 
-        const small = contactItems[2].querySelector("small");
-        const link = contactItems[2].querySelector("a");
+        const small =
+            contactItems[2].querySelector("small");
 
-        if (small) small.textContent = t.telegram;
+        const link =
+            contactItems[2].querySelector("a");
 
-        if (link) link.textContent = t.telegramChannel;
+
+        if (small) {
+            small.textContent =
+                t.telegram;
+        }
+
+        if (link) {
+            link.textContent =
+                t.telegramChannel;
+        }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // FORM
-    // ------------------------------
+    // ======================================
 
-    const nameInput = document.getElementById("name");
-    const phoneInput = document.getElementById("phone");
-    const courseSelect = document.getElementById("course");
-    const messageInput = document.getElementById("message");
+    const nameInput =
+        document.getElementById("name");
+
+    const phoneInput =
+        document.getElementById("phone");
+
+    const courseSelect =
+        document.getElementById("course");
+
+    const messageInput =
+        document.getElementById("message");
+
     const submitButton =
         document.querySelector("#contactForm button");
 
 
     if (nameInput) {
-        nameInput.placeholder = t.namePlaceholder;
+        nameInput.placeholder =
+            t.namePlaceholder;
     }
+
 
     if (phoneInput) {
-        phoneInput.placeholder = t.phonePlaceholder;
+        phoneInput.placeholder =
+            t.phonePlaceholder;
     }
+
 
     if (messageInput) {
-        messageInput.placeholder = t.messagePlaceholder;
+        messageInput.placeholder =
+            t.messagePlaceholder;
     }
 
+
     if (submitButton) {
-        submitButton.textContent = t.sendApplication;
+        submitButton.textContent =
+            t.sendApplication;
     }
 
 
     if (courseSelect) {
 
-        courseSelect.options[0].textContent =
-            t.selectCourse;
+        if (courseSelect.options[0]) {
+            courseSelect.options[0].textContent =
+                t.selectCourse;
+        }
 
-        const options = courseSelect.options;
 
-        if (options[1]) options[1].textContent = t.english;
-        if (options[2]) options[2].textContent = t.russian;
-        if (options[3]) options[3].textContent = t.arabic;
-        if (options[4]) options[4].textContent = t.mathematics;
-        if (options[5]) options[5].textContent = t.drawing;
-        if (options[6]) options[6].textContent = t.it;
-        if (options[7]) options[7].textContent = t.frontend;
+        const options =
+            courseSelect.options;
+
+
+        if (options[1]) {
+            options[1].textContent =
+                t.english;
+        }
+
+        if (options[2]) {
+            options[2].textContent =
+                t.russian;
+        }
+
+        if (options[3]) {
+            options[3].textContent =
+                t.arabic;
+        }
+
+        if (options[4]) {
+            options[4].textContent =
+                t.mathematics;
+        }
+
+        if (options[5]) {
+            options[5].textContent =
+                t.drawing;
+        }
+
+        if (options[6]) {
+            options[6].textContent =
+                t.it;
+        }
+
+        if (options[7]) {
+            options[7].textContent =
+                t.frontend;
+        }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // FOOTER
-    // ------------------------------
+    // ======================================
 
-    const footer = document.querySelector("footer");
+    const footer =
+        document.querySelector("footer");
+
 
     if (footer) {
 
-        const paragraphs = footer.querySelectorAll("p");
+        const paragraphs =
+            footer.querySelectorAll("p");
+
 
         if (paragraphs[0]) {
-            paragraphs[0].textContent = t.footerText;
+            paragraphs[0].textContent =
+                t.footerText;
         }
 
+
         if (paragraphs[1]) {
-            paragraphs[1].textContent = t.copyright;
+            paragraphs[1].textContent =
+                t.copyright;
         }
+
     }
 
 
-    // ------------------------------
+    // ======================================
     // SAVE LANGUAGE
-    // ------------------------------
+    // ======================================
 
-    localStorage.setItem("ilmLanguage", lang);
+    try {
+
+        localStorage.setItem(
+            "ilmLanguage",
+            lang
+        );
+
+    } catch (error) {
+
+        console.warn(
+            "Language storage error:",
+            error
+        );
+
+    }
 
 
-    // ------------------------------
-    // ACTIVE BUTTON
-    // ------------------------------
+    // ======================================
+    // ACTIVE LANGUAGE BUTTON
+    // ======================================
 
-    document.querySelectorAll(".lang-btn").forEach(button => {
+    document
+        .querySelectorAll(".lang-btn")
+        .forEach(button => {
 
-        button.classList.remove("active");
+            button.classList.remove("active");
 
-        if (button.dataset.language === lang) {
-            button.classList.add("active");
-        }
 
-    });
+            if (
+                button.dataset.language === lang
+            ) {
+
+                button.classList.add("active");
+
+            }
+
+        });
 
 }
 
 
 // ==========================================
-// LANGUAGE CLICK
+// LANGUAGE BUTTON CLICK
 // ==========================================
 
-document.querySelectorAll(".lang-btn").forEach(button => {
+document
+    .querySelectorAll(".lang-btn")
+    .forEach(button => {
 
-    button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-        const language = button.dataset.language;
+                const language =
+                    button.dataset.language;
 
-        applyLanguage(language);
+                applyLanguage(language);
+
+            }
+        );
 
     });
 
-});
-
 
 // ==========================================
-// FORM
+// TELEGRAM FORM
+// ==========================================
+// FORM → NETLIFY FUNCTION → TELEGRAM
 // ==========================================
 
-const form = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
+const contactForm =
+    document.getElementById("contactForm");
 
-if (form) {
-
-    form.addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const name =
-            document.getElementById("name").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const course =
-            document.getElementById("course").value;
+const formMessage =
+    document.getElementById("formMessage");
 
 
-        const currentLanguage =
-            localStorage.getItem("ilmLanguage") || "uz";
+if (contactForm) {
 
-        const t = translations[currentLanguage];
+    contactForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            // Sahifa yangilanmasin
+            event.preventDefault();
+
+            // Boshqa submit handlerlar aralashmasin
+            event.stopImmediatePropagation();
 
 
-        if (!name || !phone || !course) {
+            // ==================================
+            // FORM ELEMENTS
+            // ==================================
 
-            if (formMessage) {
-                formMessage.textContent = t.formEmpty;
+            const nameInput =
+                document.getElementById("name");
+
+            const phoneInput =
+                document.getElementById("phone");
+
+            const courseSelect =
+                document.getElementById("course");
+
+            const messageInput =
+                document.getElementById("message");
+
+
+            const name =
+                nameInput
+                    ? nameInput.value.trim()
+                    : "";
+
+            const phone =
+                phoneInput
+                    ? phoneInput.value.trim()
+                    : "";
+
+            const course =
+                courseSelect
+                    ? courseSelect.value
+                    : "";
+
+            const message =
+                messageInput
+                    ? messageInput.value.trim()
+                    : "";
+
+
+            // ==================================
+            // CURRENT LANGUAGE
+            // ==================================
+
+            let currentLanguage = "uz";
+
+
+            try {
+
+                currentLanguage =
+                    localStorage.getItem(
+                        "ilmLanguage"
+                    ) || "uz";
+
+            } catch (error) {
+
+                currentLanguage = "uz";
+
             }
 
-            return;
-        }
+
+            const t =
+                translations[currentLanguage] ||
+                translations.uz;
 
 
-        if (formMessage) {
-            formMessage.textContent = t.formSuccess;
-        }
+            // ==================================
+            // VALIDATION
+            // ==================================
 
-        form.reset();
+            if (
+                !name ||
+                !phone ||
+                !course
+            ) {
 
-    });
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        t.formEmpty;
+
+                    formMessage.className =
+                        "err";
+
+                }
+
+                return;
+
+            }
+
+
+            // ==================================
+            // SUBMIT BUTTON
+            // ==================================
+
+            const submitButton =
+                contactForm.querySelector(
+                    "button[type='submit']"
+                );
+
+
+            const oldButtonText =
+                submitButton
+                    ? submitButton.textContent
+                    : t.sendApplication;
+
+
+            if (submitButton) {
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Yuborilmoqda...";
+
+            }
+
+
+            // ==================================
+            // CLEAR OLD MESSAGE
+            // ==================================
+
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "";
+
+                formMessage.className =
+                    "";
+
+            }
+
+
+            // ==================================
+            // SEND TO NETLIFY FUNCTION
+            // ==================================
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/.netlify/functions/telegram",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                name:
+                                    name,
+
+                                phone:
+                                    phone,
+
+                                course:
+                                    course,
+
+                                message:
+                                    message
+
+                            })
+
+                        }
+                    );
+
+
+                // ==================================
+                // READ RESPONSE
+                // ==================================
+
+                let result = null;
+
+
+                try {
+
+                    result =
+                        await response.json();
+
+                } catch (jsonError) {
+
+                    result = null;
+
+                }
+
+
+                // ==================================
+                // CHECK RESULT
+                // ==================================
+
+                if (
+                    !response.ok ||
+                    !result ||
+                    !result.success
+                ) {
+
+                    console.error(
+                        "Telegram Function error:",
+                        result
+                    );
+
+                    throw new Error(
+                        "Telegramga yuborilmadi"
+                    );
+
+                }
+
+
+                // ==================================
+                // SUCCESS
+                // ==================================
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        t.formSuccess;
+
+                    formMessage.className =
+                        "ok";
+
+                }
+
+
+                // Formani tozalash
+                contactForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Form error:",
+                    error
+                );
+
+
+                // ==================================
+                // ERROR
+                // ==================================
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        t.formError;
+
+                    formMessage.className =
+                        "err";
+
+                }
+
+            } finally {
+
+                // ==================================
+                // ENABLE BUTTON
+                // ==================================
+
+                if (submitButton) {
+
+                    submitButton.disabled =
+                        false;
+
+                    submitButton.textContent =
+                        t.sendApplication ||
+                        oldButtonText;
+
+                }
+
+            }
+
+        },
+
+        // CAPTURE = true
+        // premium.js dagi eski submit handler
+        // bo'lsa ham bu handler birinchi ishlaydi.
+        true
+
+    );
 
 }
 
@@ -1145,100 +1952,183 @@ if (form) {
 // HEADER SHADOW
 // ==========================================
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    () => {
 
-    const header = document.querySelector(".header");
+        const header =
+            document.querySelector(".header");
 
-    if (!header) return;
 
-    if (window.scrollY > 30) {
+        if (!header) {
+            return;
+        }
 
-        header.style.boxShadow =
-            "0 8px 30px rgba(0,0,0,.06)";
 
-    } else {
+        if (window.scrollY > 30) {
 
-        header.style.boxShadow = "none";
+            header.style.boxShadow =
+                "0 8px 30px rgba(0,0,0,.06)";
+
+        } else {
+
+            header.style.boxShadow =
+                "none";
+
+        }
 
     }
-
-});
+);
 
 
 // ==========================================
 // LANGUAGE SWITCHER STYLE
 // ==========================================
 
-const languageStyle = document.createElement("style");
+const languageStyle =
+    document.createElement("style");
+
 
 languageStyle.textContent = `
 
 .language-switcher {
+
     display: flex;
+
     align-items: center;
+
     gap: 5px;
+
     margin-left: 20px;
+
 }
+
 
 .lang-btn {
+
     border: 1px solid #ddd;
+
     background: white;
+
     color: #555;
+
     padding: 7px 10px;
+
     border-radius: 8px;
+
     font-size: 11px;
+
     font-weight: 800;
+
     cursor: pointer;
+
     transition: .25s;
+
 }
+
 
 .lang-btn:hover {
+
     color: #e50914;
+
     border-color: #e50914;
+
 }
 
+
 .lang-btn.active {
+
     background: #e50914;
+
     border-color: #e50914;
+
     color: white;
+
 }
+
+
+.lang-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
 
 @media (max-width: 900px) {
 
     .language-switcher {
+
         position: absolute;
+
         right: 70px;
+
         top: 20px;
+
         margin: 0;
+
     }
 
 }
 
+
 @media (max-width: 600px) {
 
     .language-switcher {
+
         right: 60px;
+
         top: 21px;
+
         gap: 3px;
+
     }
 
+
     .lang-btn {
+
         padding: 6px 7px;
+
         font-size: 10px;
+
     }
 
 }
 
 `;
 
-document.head.appendChild(languageStyle);
+document.head.appendChild(
+    languageStyle
+);
 
 
 // ==========================================
 // LOAD SAVED LANGUAGE
 // ==========================================
 
-const savedLanguage =
-    localStorage.getItem("ilmLanguage") || "uz";
+let savedLanguage = "uz";
 
-applyLanguage(savedLanguage);
+
+try {
+
+    savedLanguage =
+        localStorage.getItem(
+            "ilmLanguage"
+        ) || "uz";
+
+} catch (error) {
+
+    savedLanguage = "uz";
+
+}
+
+
+applyLanguage(
+    savedLanguage
+);
+
+
+// ==========================================
+// END OF SCRIPT
+// ==========================================
